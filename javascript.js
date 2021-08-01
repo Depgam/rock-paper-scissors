@@ -77,8 +77,9 @@ let userScore = 0;
 let computerScore = 0;
 let gameFlag = true;
 
-playGame();
-playGame();
-playGame();
-playGame();
-playGame();
+while (gameFlag) {
+    playGame();
+    if (userScore === 5 || computerScore === 5) {
+        gameFlag = false;
+    }
+}
