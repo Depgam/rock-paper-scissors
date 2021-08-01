@@ -12,6 +12,7 @@ function computerPlay() {
 
 function userPlay() {
     const userInput = prompt("Choose between: 'rock', 'paper' or 'scissors' ");
+    return userInput;
 };
 
 function playRound(userInput, computerInput) {
@@ -59,32 +60,25 @@ function playRound(userInput, computerInput) {
 }
 
 function playGame() {
-    let userInput;
-    let computerInput;
+    computerInput = computerPlay();
+    userInput = userPlay();
 
-    let userScore = 0;
-    let computerScore = 0;
-    let gameFlag = true;
-
-    while (gameFlag) {
-        computerInput = computerPlay();
-        userInput = userPlay();
-
-        if (typeof userInput === 'string' && userInput.toLowerCase().includes("rock", "paper", "scissors")) {
-            userInput.toLowerCase();
-
-            console.log(playRound(userInput, computerInput));
-
-            console.log(`Current user score is: ${userScore}.`)
-            console.log(`Current computer score is: ${computerScore}. `)
-
-            if (computerScore == 5 || userScore == 5) {
-                gameFlag == false;
-            }
-
-        }
-
+    if (typeof userInput === 'string') {
+        userInput.toLowerCase();
+        console.log(playRound(userInput, computerInput));
+        console.log(`Current user score is: ${userScore}.`)
+        console.log(`Current computer score is: ${computerScore}. `)
     }
 }
 
+let userInput;
+let computerInput;
+let userScore = 0;
+let computerScore = 0;
+let gameFlag = true;
+
+playGame();
+playGame();
+playGame();
+playGame();
 playGame();
